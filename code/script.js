@@ -103,7 +103,7 @@ let confirmOrder = prompt("Do you want to confirm your order? (yes/no)");
 if (confirmOrder.toLowerCase() === "yes") {
   alert(
     "Thank you " +
-      userName +
+      firstName +
       "! Your " +
       size +
       " " +
