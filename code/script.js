@@ -6,33 +6,43 @@ alert(
 );
 
 let firstName = prompt("What is your name?");
-alert("Hi and welcome, " + firstName);
+alert("Hi and welcome, " + firstName + "!😊");
 
 // Step 2 - Food choice
 let foodChoice = prompt(
   "What would you like to order?\nEnter a number:\n 1 - Pizza\n 2 - Pasta\n 3 - Salad"
 );
+let selectedFood = ""; // To store the main food type
+
 if (foodChoice == "1") {
-  alert("You've chosen Pizza");
+  selectedFood = "Pizza";
+  alert("You've chosen Pizza!🍕");
 } else if (foodChoice == "2") {
-  alert("You've chosen Pasta");
+  selectedFood = "Pasta";
+  alert("You've chosen Pasta!🍝");
 } else if (foodChoice == "3") {
-  alert("You've chosen Salad");
+  selectedFood = "Salad";
+  alert("You've chosen Salad!🥗");
 } else {
   alert("Invalid number");
 }
 
 // Step 3 - Subtype choice
+let subChoice = ""; // To store the subtype
+
 if (foodChoice == "1") {
   let pizzaType = prompt(
     "Select a Pizza type:\n1 - Pepperoni\n2 - Hawaii\n3 - Chicken BBQ"
   );
 
   if (pizzaType == "1") {
+    subChoice = "Pepperoni Pizza";
     alert("You've chosen Pepperoni Pizza!");
   } else if (pizzaType == "2") {
+    subChoice = "Hawaii Pizza";
     alert("You've chosen Hawaii Pizza!");
   } else if (pizzaType == "3") {
+    subChoice = "Chicken BBQ Pizza";
     alert("You've chosen Chicken BBQ Pizza!");
   } else {
     alert("Invalid Pizza choice");
@@ -43,10 +53,13 @@ if (foodChoice == "1") {
   );
 
   if (pastaType == "1") {
+    subChoice = "Carbonara Pasta";
     alert("You've chosen Carbonara!");
   } else if (pastaType == "2") {
+    subChoice = "Alfredo Pasta";
     alert("You've chosen Alfredo!");
   } else if (pastaType == "3") {
+    subChoice = "Bolognese Pasta";
     alert("You've chosen Bolognese!");
   } else {
     alert("Invalid Pasta choice");
@@ -57,10 +70,13 @@ if (foodChoice == "1") {
   );
 
   if (saladType == "1") {
+    subChoice = "Greek Salad";
     alert("You've chosen Greek salad!");
   } else if (saladType == "2") {
+    subChoice = "Cobb Salad";
     alert("You've chosen Cobb salad!");
   } else if (saladType == "3") {
+    subChoice = "Waldorf Salad";
     alert("You've chosen Waldorf salad!");
   } else {
     alert("Invalid Salad choice");
@@ -68,7 +84,32 @@ if (foodChoice == "1") {
 }
 
 // Step 4 - Age
-// Your code goes here
+let age = Number(prompt("Enter your age:"));
+
+let size;
+
+if (age < 18) {
+  size = "child size";
+} else {
+  size = "adult size";
+}
+
+// Check age and alert message
+alert("One " + size + " " + subChoice + " will be prepared.");
 
 // Step 5 - Order confirmation
-// Your code goes here
+let confirmOrder = prompt("Do you want to confirm your order? (yes/no)");
+
+if (confirmOrder.toLowerCase() === "yes") {
+  alert(
+    "Thank you " +
+      userName +
+      "! Your " +
+      size +
+      " " +
+      subChoice +
+      " will be prepared shortly."
+  );
+} else {
+  alert("No worries " + firstName + ", we hope to see you again soon!👋");
+}
